@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
-import {MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, MatExpansionModule} from '@angular/material';
+import {MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, MatExpansionModule, MatDialogModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 
@@ -24,7 +24,8 @@ import { HomeComponent } from './home/home.component';
     MatIconModule,
     HttpClientModule,
     MatMenuModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
