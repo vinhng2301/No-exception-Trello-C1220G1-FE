@@ -1,8 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
+import {LayoutModule} from './layout/layout.module';
+import {FormsModule} from '@angular/forms';
+import {FormModule} from './form/form.module';
+import {
+  MatButtonModule, MatCardModule,
+  MatIconModule, MatListModule,
+  MatMenuModule, MatToolbarModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -10,9 +20,21 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    LayoutModule,
+    BrowserAnimationsModule,
+    FormModule,
+    FormsModule,
+    MatListModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
