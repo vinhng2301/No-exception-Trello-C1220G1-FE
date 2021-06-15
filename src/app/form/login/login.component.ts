@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {environment} from '../../../environments/environment';
+import {Login} from '../../interface/login';
+import {AuthenServiceService} from '../../service/authentication/authen-service.service';
+import {first} from 'rxjs/operators';
+
+const API_BACKEND = environment.api_url;
 
 @Component({
   selector: 'app-login',
@@ -7,9 +14,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  login: Login = {
+    id: 0,
+    userName: '',
+    passWord: '',
+    email: '',
+    confirmPassword: '',
+    phone: '',
+    role: [],
+  };
+  // @ts-ignore
+  currentUser: IUserToken;
+  hide = true;
+  isLoginFailed = false;
 
-  ngOnInit() {
+  constructor(private authenService: AuthenServiceService,
+              private router: Router) {
+    this.authenService.currentUser.subscribe(value => this.currentUser = value);
   }
+
+  ngOnInit(): void {
+  }
+
+  loginUser() {
+    this.authenService.login(this.login.userName, this.login.passWord).pipe(first()).subscribe(
+      () => {
+        this.authenService.currentUserValue.accessToken;
+        this.router.navigate(['/home']);
+      },
+      error => {
+        this.isLoginFailed = true;
+      }
+    );
+  }
+
 
 }

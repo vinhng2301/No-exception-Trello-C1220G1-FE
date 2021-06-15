@@ -7,12 +7,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {LayoutModule} from './layout/layout.module';
 import {FormsModule} from '@angular/forms';
-import {FormModule} from './form/form.module';
-import {
-  MatButtonModule, MatCardModule,
-  MatIconModule, MatListModule,
-  MatMenuModule, MatToolbarModule
-} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -24,14 +18,7 @@ import {
     HttpClientModule,
     LayoutModule,
     BrowserAnimationsModule,
-    FormModule,
     FormsModule,
-    MatListModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
